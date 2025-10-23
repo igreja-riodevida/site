@@ -17,7 +17,9 @@ export default function Home() {
 				</div>
 
 				{/* Título */}
-				<h1 className="font-bold text-4xl lg:text-6xl">Novo Site em Breve</h1>
+				<h1 className="font-bold text-4xl lg:text-6xl text-primary">
+					Novo Site em Breve
+				</h1>
 
 				{/* Subtítulo */}
 				<p className="max-w-2xl text-lg opacity-90 lg:text-xl">
