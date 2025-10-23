@@ -1,0 +1,17 @@
+<svg width="1500" height="300" viewBox="0 0 1500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo circular -->
+  <circle cx="150" cy="150" r="140" fill="#0976F4"/>
+  <!-- Ondas dentro do círculo -->
+  <path d="M50 150 Q100 120 150 150 T250 150" stroke="white" stroke-width="8" fill="none"/>
+  <path d="M60 170 Q110 140 160 170 T260 170" stroke="white" stroke-width="6" fill="none"/>
+  <path d="M70 190 Q120 160 170 190 T270 190" stroke="white" stroke-width="4" fill="none"/>
+  
+  <!-- Texto IGREJA -->
+  <text x="350" y="80" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#0976F4">IGREJA</text>
+  
+  <!-- Texto RIO DE VIDA -->
+  <text x="350" y="160" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#0976F4">RIO DE VIDA</text>
+  
+  <!-- Subtítulo -->
+  <text x="350" y="200" font-family="Arial, sans-serif" font-size="24" fill="#695F6E">Lugar de Novos Começos</text>
+</svg>
