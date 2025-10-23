@@ -10,13 +10,13 @@ export default function Home() {
             src="/images/fire.png"
             alt="fire"
             fill
-            className="object-cover object-right opacity-60"
+            className="object-cover object-right-bottom opacity-60"
           />
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 bg-black/30 px-4">
           <div className="flex flex-col items-center">
             <p className="-mb-[1rem] font-binggo text-3xl uppercase tracking-[.5rem]">
-              Conferencia do
+              Conferência do
             </p>
             <h1 className="flex flex-col font-medium font-sirenik text-9xl lg:text-[167px]">
               <span>Espírito</span>
