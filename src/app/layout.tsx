@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Gotu } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import './globals.css'
-import { SiteHeader } from '@/components/header'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -49,7 +48,7 @@ export default function RootLayout({
 			<body
 				className={`${binggoWood.variable} ${gotu.variable} ${geistMono.variable} ${geistSans.variable} ${sirenikRegular.variable} antialiased`}
 			>
-				<SiteHeader />
+				{/* header */}
 				<main>{children}</main>
 				{/* footer */}
 			</body>
