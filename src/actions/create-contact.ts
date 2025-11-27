@@ -6,5 +6,5 @@ import { db } from '@/services/drizzle.service'
 import { v4 } from 'uuid'
 
 export async function createContact(formData: FormSchemaType) {
-  await db.insert(contacts).values({ ...formData, id: v4() })
+	await db.insert(contacts).values({ ...formData, id: v4() })
 }
