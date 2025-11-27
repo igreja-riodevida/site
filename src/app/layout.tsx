@@ -69,8 +69,8 @@ export const metadata: Metadata = {
 		process.env.NEXT_PUBLIC_APP_URL || 'https://igrejariodevida.com.br',
 	),
 	openGraph: {
-		title: 'Igreja Rio de Vida Acre',
-		description: 'Comunidade Cristã em Rio Branco, Acre.',
+		title: 'Igreja Rio de Vida',
+		description: 'Lugar de Novos Começos',
 		type: 'website',
 		locale: 'pt_BR',
 	},
