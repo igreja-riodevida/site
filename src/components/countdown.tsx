@@ -18,7 +18,7 @@ export function Countdown() {
 	})
 
 	useEffect(() => {
-		const targetDate = new Date('2025-12-01T18:00:00').getTime()
+		const targetDate = new Date('2025-12-07T09:00:00').getTime()
 
 		const timer = setInterval(() => {
 			const now = new Date().getTime()
@@ -40,9 +40,9 @@ export function Countdown() {
 
 		return () => clearInterval(timer)
 	}, [])
-	// git commit -a -m
+
 	return (
-		<div className="flex gap-4 text-center text-primary">
+		<div className="flex gap-4 text-center text-white">
 			<div className="flex flex-col">
 				<span className="font-bold text-4xl lg:text-6xl">{timeLeft.days}</span>
 				<span className="text-sm uppercase tracking-wider">Dias</span>

@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 export default function Home() {
 	return (
-		<div className="flex min-h-screen flex-col items-center justify-center">
+		<div className="flex min-h-screen flex-col items-center justify-center bg-[#01357a] text-white">
 			<div className="flex flex-col items-center space-y-8 px-4 text-center">
 				{/* Logo */}
 				<div className="mb-8">
 					<Image
-						src="/images/logo-irv.png"
+						src="/images/logo_irv_nova.svg"
 						alt="Igreja Rio de Vida"
 						width={400}
 						height={80}
@@ -32,7 +32,7 @@ export default function Home() {
 
 				{/* Data */}
 				<p className="mt-4 font-semibold text-xl lg:text-2xl">
-					1º de Dezembro de 2024
+					7 de Dezembro de 2024
 				</p>
 
 				{/* Mensagem adicional */}

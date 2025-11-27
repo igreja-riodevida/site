@@ -32,10 +32,48 @@ const sirenikRegular = localFont({
 	display: 'swap',
 })
 
+export const viewport = {
+	themeColor: '#01357a',
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 5,
+}
+
 export const metadata: Metadata = {
-	title: 'Igreja Rio de Vida',
-	description: 'Lugar de Novos Começos',
+	title: 'Igreja Rio de Vida | Lugar de Novos Começos',
+	description:
+		'Somos uma igreja que expressa o amor de Deus pelas pessoas, cada membro é um ministro para servir no Reino com seus dons e talentos. Aqui é um lugar para descobrir e viver seu propósito de vida.',
 	manifest: '/site.webmanifest',
+	keywords: [
+		'Igreja',
+		'Rio de Vida',
+		'Brasília',
+		'Distrito Federal',
+		'Evangélica',
+		'Cristã',
+		'Religião',
+		'Comunidade',
+		'Cultos',
+		'Palavra de Deus',
+	],
+	authors: [{ name: 'Igreja Rio de Vida' }],
+	creator: 'Igreja Rio de Vida',
+	publisher: 'Igreja Rio de Vida',
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	// Base de metadados assumindo o domínio 'igrejariodevida.ac'
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_APP_URL || 'https://igrejariodevida.com.br',
+	),
+	openGraph: {
+		title: 'Igreja Rio de Vida Acre',
+		description: 'Comunidade Cristã em Rio Branco, Acre.',
+		type: 'website',
+		locale: 'pt_BR',
+	},
 }
 
 export default function RootLayout({
@@ -45,8 +83,16 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR" suppressHydrationWarning>
+			<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="anonymous"
+				/>
+			</head>
 			<body
-				className={`${binggoWood.variable} ${gotu.variable} ${geistMono.variable} ${geistSans.variable} ${sirenikRegular.variable} antialiased`}
+				className={`${binggoWood.variable} ${gotu.variable} ${geistMono.variable} ${geistSans.variable} ${sirenikRegular.variable} font-sans antialiased`}
 			>
 				{/* header */}
 				<main>{children}</main>
