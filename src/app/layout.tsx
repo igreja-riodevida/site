@@ -68,11 +68,23 @@ export const metadata: Metadata = {
 	metadataBase: new URL(
 		process.env.NEXT_PUBLIC_APP_URL || 'https://igrejariodevida.com.br',
 	),
+	robots: {
+		follow: true,
+		index: true,
+	},
 	openGraph: {
 		title: 'Igreja Rio de Vida',
 		description: 'Lugar de Novos Começos',
 		type: 'website',
 		locale: 'pt_BR',
+		images: [
+			{
+				url: '/images/logo_irv_nova.svg',
+				width: 950,
+				height: 360,
+				alt: 'Igreja Rio de Vida | Lugar de Novos Começos',
+			},
+		],
 	},
 }
 
