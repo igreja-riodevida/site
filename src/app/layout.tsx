@@ -80,7 +80,7 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: '/images/logo_irv_nova.svg',
-				width: 950,
+				width: 990,
 				height: 360,
 				alt: 'Igreja Rio de Vida | Lugar de Novos Começos',
 			},
