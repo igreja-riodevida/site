@@ -1,39 +1,79 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
-	"vcs": {
-		"enabled": false,
-		"clientKind": "git",
-		"useIgnoreFile": false
-	},
-	"files": {
-		"ignoreUnknown": false,
-		"include": ["**"],
-		"ignore": ["**/dist", "**/.next"]
-	},
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "tab"
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"correctness": {
-				"noUnusedImports": "error",
-				"noChildrenProp": "info"
-			},
-			"nursery": {
-				"useSortedClasses": "warn"
-			},
-			"style": {
-				"useImportType": "warn"
-			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"semicolons": "asNeeded"
-		}
-	}
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "src/api/generated/**",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "error"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
+      },
+      "style": {
+        "useImportType": {
+          "level": "error",
+          "options": {
+            "style": "auto"
+          }
+        }
+      }
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ["react", "next/**"],
+              ":BLANK_LINE:",
+              [":PACKAGE:", "!@repo/**"],
+              ":BLANK_LINE:",
+              ["@repo/**"],
+              ":BLANK_LINE:",
+              ["@/**"],
+              ":BLANK_LINE:",
+              "**"
+            ]
+          }
+        }
+      }
+    }
+  }
 }
