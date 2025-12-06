@@ -49,14 +49,14 @@
 
 :root {
   --radius: 0.625rem;
-  
+
   /* Brand Colors - Igreja Rio de Vida */
   --color-light: oklch(0.94 0.01 85);
   --color-accent-light: oklch(0.72 0.08 210);
   --color-brand: oklch(0.55 0.18 250);
   --color-accent-dark: oklch(0.45 0.02 300);
   --color-dark: oklch(0.18 0.02 285);
-  
+
   /* Semantic Colors */
   --background: var(--color-light);
   --foreground: var(--color-dark);
