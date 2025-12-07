@@ -18,7 +18,7 @@ export function Countdown() {
 	})
 
 	useEffect(() => {
-		const targetDate = new Date('2025-12-07T09:00:00').getTime()
+		const targetDate = new Date('2026-01-04T18:30:00').getTime()
 
 		const timer = setInterval(() => {
 			const now = new Date().getTime()
