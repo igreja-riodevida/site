@@ -33,7 +33,7 @@ export default function Home() {
 
         {/* Data */}
         <p className="mt-4 font-semibold text-xl lg:text-2xl">
-          4 de Janeiro de 2026
+          05 de Abril de 2026
         </p>
 
         {/* Mensagem adicional */}

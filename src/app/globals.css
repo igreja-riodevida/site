@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --header-height: calc(var(--spacing) * 18);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -53,7 +54,7 @@
   /* Brand Colors - Igreja Rio de Vida */
   --color-light: oklch(0.94 0.01 85);
   --color-accent-light: oklch(0.72 0.08 210);
-  --color-brand: oklch(0.55 0.18 250);
+  --color-brand: oklch(0.42 0.16 259.92);
   --color-accent-dark: oklch(0.45 0.02 300);
   --color-dark: oklch(0.18 0.02 285);
 

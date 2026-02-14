@@ -75,6 +75,8 @@ DATABASE_URL="postgresql://user:password@localhost:5432/irv_db"
 
 # Email (Resend)
 RESEND_API_KEY="your_resend_api_key"
+SMTP_FROM_EMAIL="site@igrejariodevida.com.br"
+SMTP_TO_EMAIL="contato@igrejariodevida.com.br"
 
 # Next.js
 NEXTAUTH_SECRET="your_nextauth_secret"
