@@ -1,115 +1,121 @@
-import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Gotu } from 'next/font/google'
 import localFont from 'next/font/local'
+
+import type { Metadata } from 'next'
 
 import './globals.css'
 
 const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 })
 
 const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 })
 
 const gotu = Gotu({
-	variable: '--font-gotu',
-	weight: '400',
-	subsets: ['latin'],
+  variable: '--font-gotu',
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const kingredSerif = localFont({
+  variable: '--font-kingred-serif',
+  src: '../../public/fonts/kingred_serif.woff2',
 })
 
 const binggoWood = localFont({
-	variable: '--font-binggo-wood',
-	src: '../../public/fonts/binggo-wood.woff2',
-	display: 'swap',
+  variable: '--font-binggo-wood',
+  src: '../../public/fonts/binggo-wood.woff2',
+  display: 'swap',
 })
 
 const sirenikRegular = localFont({
-	variable: '--font-sirenik-regular',
-	src: '../../public/fonts/sirenik-regular.woff2',
-	display: 'swap',
+  variable: '--font-sirenik-regular',
+  src: '../../public/fonts/sirenik-regular.woff2',
+  display: 'swap',
 })
 
 export const viewport = {
-	themeColor: '#01357a',
-	width: 'device-width',
-	initialScale: 1,
-	maximumScale: 5,
+  themeColor: '#01357a',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export const metadata: Metadata = {
-	title: 'Igreja Rio de Vida | Lugar de Novos Começos',
-	description:
-		'Somos uma igreja que expressa o amor de Deus pelas pessoas, cada membro é um ministro para servir no Reino com seus dons e talentos. Aqui é um lugar para descobrir e viver seu propósito de vida.',
-	manifest: '/site.webmanifest',
-	keywords: [
-		'Igreja',
-		'Rio de Vida',
-		'Brasília',
-		'Distrito Federal',
-		'Evangélica',
-		'Cristã',
-		'Religião',
-		'Comunidade',
-		'Cultos',
-		'Palavra de Deus',
-	],
-	authors: [{ name: 'Igreja Rio de Vida' }],
-	creator: 'Igreja Rio de Vida',
-	publisher: 'Igreja Rio de Vida',
-	formatDetection: {
-		email: false,
-		address: false,
-		telephone: false,
-	},
-	// Base de metadados assumindo o domínio 'igrejariodevida.ac'
-	metadataBase: new URL(
-		process.env.NEXT_PUBLIC_APP_URL || 'https://igrejariodevida.com.br',
-	),
-	robots: {
-		follow: true,
-		index: true,
-	},
-	openGraph: {
-		title: 'Igreja Rio de Vida',
-		description: 'Lugar de Novos Começos',
-		type: 'website',
-		locale: 'pt_BR',
-		images: [
-			{
-				url: '/images/logo_irv_nova.svg',
-				width: 990,
-				height: 360,
-				alt: 'Igreja Rio de Vida | Lugar de Novos Começos',
-			},
-		],
-	},
+  title: 'Igreja Rio de Vida | Lugar de Novos Começos',
+  description:
+    'Somos uma igreja que expressa o amor de Deus pelas pessoas, cada membro é um ministro para servir no Reino com seus dons e talentos. Aqui é um lugar para descobrir e viver seu propósito de vida.',
+  manifest: '/site.webmanifest',
+  keywords: [
+    'Igreja',
+    'Rio de Vida',
+    'Brasília',
+    'Distrito Federal',
+    'Evangélica',
+    'Cristã',
+    'Religião',
+    'Comunidade',
+    'Cultos',
+    'Palavra de Deus',
+  ],
+  authors: [{ name: 'Igreja Rio de Vida' }],
+  creator: 'Igreja Rio de Vida',
+  publisher: 'Igreja Rio de Vida',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  // Base de metadados assumindo o domínio 'igrejariodevida.ac'
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || 'https://igrejariodevida.com.br',
+  ),
+  robots: {
+    follow: true,
+    index: true,
+  },
+  openGraph: {
+    title: 'Igreja Rio de Vida',
+    description: 'Lugar de Novos Começos',
+    type: 'website',
+    locale: 'pt_BR',
+    images: [
+      {
+        url: '/images/logo_irv_nova.svg',
+        width: 990,
+        height: 360,
+        alt: 'Igreja Rio de Vida | Lugar de Novos Começos',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode
+  children: React.ReactNode
 }>) {
-	return (
-		<html lang="pt-BR" suppressHydrationWarning>
-			<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-					crossOrigin="anonymous"
-				/>
-			</head>
-			<body
-				className={`${binggoWood.variable} ${gotu.variable} ${geistMono.variable} ${geistSans.variable} ${sirenikRegular.variable} font-sans antialiased`}
-			>
-				{/* header */}
-				<main>{children}</main>
-				{/* footer */}
-			</body>
-		</html>
-	)
+  return (
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body
+        className={`${binggoWood.variable} ${gotu.variable} ${geistMono.variable} ${geistSans.variable} ${sirenikRegular.variable} ${kingredSerif.variable} font-sans antialiased`}
+      >
+        {/* header */}
+        <main>{children}</main>
+        {/* footer */}
+      </body>
+    </html>
+  )
 }

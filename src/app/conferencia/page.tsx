@@ -8,6 +8,7 @@ import { ArrowRight, Calendar, CheckCircle, Clock, MapPin } from 'lucide-react'
 import { v4 } from 'uuid'
 
 import { createConferenceContact } from '@/actions/create-conference-contact'
+import { Footer } from '@/components/footer'
 
 export default function LandingPage() {
   const [formData, setFormData] = useState({
@@ -61,13 +62,13 @@ export default function LandingPage() {
 
   return (
     // Alterado bg-white para um gradiente sutil e texto base para azul escuro
-    <div className="min-h-screen bg-slate-50 font-sans text-blue-950 selection:bg-blue-200 selection:text-[#00357A]">
+    <div className="min-h-screen bg-slate-50 font-sans text-blue-950 selection:bg-blue-200 selection:text-[hsl(214,100%,24%)]">
       {/* Header */}
-      <header className="flex w-full items-center justify-center border-blue-100 border-b bg-[#00357A] shadow-sm md:px-12">
+      <header className="flex w-full items-center justify-center border-blue-100 border-b bg-[#00357A] p-4 shadow-sm md:px-12">
         <Image
           height={200}
-          width={200}
-          src="/images/logo_irv_nova.svg"
+          width={300}
+          src="/images/logo_irv.png"
           alt="logo igreja rio de vida"
         />
       </header>
@@ -79,23 +80,23 @@ export default function LandingPage() {
           <div className="space-y-8">
             <div className="space-y-6">
               {/* Headline de Impacto */}
-              <h1 className="font-extrabold text-4xl text-blue-950 leading-tight md:text-5xl lg:text-6xl">
-                Conferência do{' '}
-                <span className="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                  Espírito Santo.
-                </span>
-              </h1>
-
+              <div>
+                <h2 className="text-2xl text-blue-950 leading-none md:text-4xl lg:text-3xl 2xl:text-2xl">
+                  CONFERÊNCIA DO
+                </h2>
+                <h1 className="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text font-kingred text-[min(10vw)] text-transparent leading-none lg:text-[min(5vw)] xl:text-[min(4vw)] 2xl:text-[min(2vw)]">
+                  ESPÍRITO SANTO
+                </h1>
+              </div>
               {/* Subheadline */}
               <p className="max-w-lg font-medium text-blue-800/80 text-lg leading-relaxed md:text-xl">
                 Um fim de semana para ser renovado pelo fogo e pelas águas vivas
                 de Deus. O seu novo tempo começa aqui.
               </p>
-
               {/* DESTAQUE PARA AS DATAS (Alteração solicitada) */}
               <div className="group relative overflow-hidden rounded-2xl border-orange-500 border-l-8 bg-[#00357A] p-6 text-white shadow-[#00357A]/20 shadow-lg">
                 {/* Efeito de fundo */}
-                <div className="-mr-10 -mt-10 absolute top-0 right-0 h-32 w-32 rounded-full bg-white/5 blur-2xl"></div>
+                <div className="absolute top-0 right-0 -mt-10 -mr-10 h-32 w-32 rounded-full bg-white/5 blur-2xl"></div>
 
                 <h3 className="mb-3 flex items-center justify-center gap-2 font-bold text-orange-400 text-sm uppercase tracking-wider">
                   <Calendar size={16} /> Reserve a Data
@@ -144,7 +145,7 @@ export default function LandingPage() {
           {/* Coluna da Direita: Visual Desktop + Formulário de Captura */}
           <div className="relative">
             {/* Background Decorativo com as cores da logo */}
-            <div className="-inset-4 absolute hidden rotate-2 rounded-[2.5rem] bg-linear-to-bl from-blue-600 to-[#00357A] opacity-10 lg:block"></div>
+            <div className="absolute -inset-4 hidden rotate-2 rounded-[2.5rem] bg-linear-to-bl from-blue-600 to-[#00357A] opacity-10 lg:block"></div>
 
             <div className="relative overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-2xl">
               {/* Imagem de Topo do Card */}
@@ -302,7 +303,7 @@ export default function LandingPage() {
                       <button
                         type="submit"
                         disabled={formData.dias.length === 0 || isSubmitting}
-                        className="hover:-translate-y-0.5 flex w-full transform items-center justify-center gap-2 rounded-lg bg-linear-to-r from-orange-500 to-orange-600 px-6 py-4 font-bold text-white shadow-lg transition-all hover:from-orange-600 hover:to-orange-700 hover:shadow-orange-500/30 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex w-full transform items-center justify-center gap-2 rounded-lg bg-linear-to-r from-orange-500 to-orange-600 px-6 py-4 font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:from-orange-600 hover:to-orange-700 hover:shadow-orange-500/30 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         {isSubmitting ? 'Enviando...' : 'Garantir Meu Lugar'}
                         <ArrowRight size={20} />
@@ -341,9 +342,7 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-blue-100 border-t bg-blue-50/50 py-8 text-center text-[#00357A]/40 text-sm">
-        <p>&copy; 2026 Ministério de Comunicação Rio de Vida.</p>
-      </footer>
+      <Footer className="border-blue-100 border-t bg-blue-50/50 py-8 text-center text-[#00357A]/40" />
     </div>
   )
 }
