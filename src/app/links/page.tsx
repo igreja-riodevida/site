@@ -12,27 +12,40 @@ import {
   MessageCircle,
   Phone,
   Users,
+  WavesIcon,
 } from 'lucide-react'
 
 import { Footer } from '@/components/footer'
+import { getWhatsAppLink } from '@/lib/get-whatsapp-link'
 
 // get from .env
 const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5561999171211'
+const WHATSAPP_NUMBER_2 =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5561992868024'
 
 export default function LinksPage() {
   const [currentView, setCurrentView] = useState<
     'home' | 'programacao' | 'gcs' | 'pastores'
   >('home')
 
-  // Função auxiliar para gerar links do WhatsApp
-  const getWhatsappLink = (message: string) => {
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
-  }
-
   // --- COMPONENTES DE VISTA ---
   const renderHome = () => (
     <div className="fade-in slide-in-from-bottom-4 mx-auto w-full max-w-md animate-in space-y-4 duration-500">
+      {/* Botão de imersão */}
+      <a
+        href={getWhatsAppLink(
+          'Olá! Quero participar do Imersão Rio de Vida 2026.',
+          WHATSAPP_NUMBER_2,
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mb-8 flex w-full transform items-center justify-center gap-2 rounded-xl border border-blue-400/50 bg-linear-to-r from-blue-500 to-blue-600 p-4 py-5 font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all hover:scale-[1.02] hover:from-blue-600 hover:to-blue-700"
+      >
+        <WavesIcon size={20} className="animate-pulse" />
+        <span>Imersão Rio de Vida 2026</span>
+      </a>
+
       <button
         type="button"
         onClick={() => setCurrentView('programacao')}
@@ -74,7 +87,10 @@ export default function LinksPage() {
 
       {/* Botão de Pedir Oração com destaque (Laranja da Logo) */}
       <a
-        href={getWhatsappLink('Olá! Quero fazer um pedido de oração.')}
+        href={getWhatsAppLink(
+          'Olá! Quero fazer um pedido de oração.',
+          WHATSAPP_NUMBER,
+        )}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 flex w-full transform items-center justify-center gap-2 rounded-xl border border-orange-400/50 bg-linear-to-r from-orange-500 to-orange-600 p-4 font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all hover:scale-[1.02] hover:from-orange-600 hover:to-orange-700"
@@ -108,8 +124,9 @@ export default function LinksPage() {
         ].map((item, i) => (
           <a
             key={`${i}-${item.nome}`}
-            href={getWhatsappLink(
+            href={getWhatsAppLink(
               `Olá! Gostaria de mais informações sobre: ${item.nome}`,
+              WHATSAPP_NUMBER,
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -152,8 +169,9 @@ export default function LinksPage() {
         ].map((item, i) => (
           <a
             key={`${i}-${item.nome}`}
-            href={getWhatsappLink(
+            href={getWhatsAppLink(
               `Olá! Gostaria de mais informações sobre o GC: ${item.nome}`,
+              WHATSAPP_NUMBER,
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -187,8 +205,9 @@ export default function LinksPage() {
         {['Nildo', 'Gláucio', 'Gilson'].map((pastor, i) => (
           <a
             key={`${i}-${pastor}`}
-            href={getWhatsappLink(
+            href={getWhatsAppLink(
               `Olá! Gostaria de falar com o pastor ${pastor}`,
+              WHATSAPP_NUMBER,
             )}
             target="_blank"
             rel="noopener noreferrer"
