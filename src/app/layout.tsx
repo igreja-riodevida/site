@@ -1,41 +1,18 @@
-import { Geist, Geist_Mono, Gotu } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import type { Metadata } from 'next'
 
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
-
-const gotu = Gotu({
-  variable: '--font-gotu',
-  weight: '400',
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
   subsets: ['latin'],
 })
 
 const kingredSerif = localFont({
   variable: '--font-kingred-serif',
   src: '../../public/fonts/kingred_serif.woff2',
-})
-
-const binggoWood = localFont({
-  variable: '--font-binggo-wood',
-  src: '../../public/fonts/binggo-wood.woff2',
-  display: 'swap',
-})
-
-const sirenikRegular = localFont({
-  variable: '--font-sirenik-regular',
-  src: '../../public/fonts/sirenik-regular.woff2',
-  display: 'swap',
 })
 
 export const viewport = {
@@ -100,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -110,7 +87,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${binggoWood.variable} ${gotu.variable} ${geistMono.variable} ${geistSans.variable} ${sirenikRegular.variable} ${kingredSerif.variable} font-sans antialiased`}
+        className={`${kingredSerif.variable} ${montserrat.variable} font-sans antialiased`}
       >
         {/* header */}
         <main>{children}</main>

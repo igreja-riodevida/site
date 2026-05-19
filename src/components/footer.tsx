@@ -1,8 +1,12 @@
 import { cn } from '@/lib/utils'
 
-export function Footer({ className }: React.ComponentProps<'footer'>) {
+export function Footer({
+  children,
+  className,
+}: React.ComponentProps<'footer'>) {
   return (
     <footer className={cn('mt-auto py-8 text-center text-sm', className)}>
+      {children}
       <p>
         &copy;{' '}
         {`${new Date().getFullYear()} Igreja Rio de Vida - Todos os direitos reservados.`}

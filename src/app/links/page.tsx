@@ -12,7 +12,6 @@ import {
   MessageCircle,
   Phone,
   Users,
-  WavesIcon,
 } from 'lucide-react'
 
 import { Footer } from '@/components/footer'
@@ -21,8 +20,6 @@ import { getWhatsAppLink } from '@/lib/get-whatsapp-link'
 // get from .env
 const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5561999171211'
-const WHATSAPP_NUMBER_2 =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5561992868024'
 
 export default function LinksPage() {
   const [currentView, setCurrentView] = useState<
@@ -32,20 +29,6 @@ export default function LinksPage() {
   // --- COMPONENTES DE VISTA ---
   const renderHome = () => (
     <div className="fade-in slide-in-from-bottom-4 mx-auto w-full max-w-md animate-in space-y-4 duration-500">
-      {/* Botão de imersão */}
-      <a
-        href={getWhatsAppLink(
-          'Olá! Quero participar do Imersão Rio de Vida 2026.',
-          WHATSAPP_NUMBER_2,
-        )}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mb-8 flex w-full transform items-center justify-center gap-2 rounded-xl border border-blue-400/50 bg-linear-to-r from-blue-500 to-blue-600 p-4 py-5 font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all hover:scale-[1.02] hover:from-blue-600 hover:to-blue-700"
-      >
-        <WavesIcon size={20} className="animate-pulse" />
-        <span>Imersão Rio de Vida 2026</span>
-      </a>
-
       <button
         type="button"
         onClick={() => setCurrentView('programacao')}
@@ -93,7 +76,7 @@ export default function LinksPage() {
         )}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 flex w-full transform items-center justify-center gap-2 rounded-xl border border-orange-400/50 bg-linear-to-r from-orange-500 to-orange-600 p-4 font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all hover:scale-[1.02] hover:from-orange-600 hover:to-orange-700"
+        className="mt-8 flex w-full transform items-center justify-center gap-2 rounded-xl border border-irv-fire-from bg-linear-to-r from-irv-fire-from to-irv-fire-to p-4 font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all hover:scale-[1.02]"
       >
         <Heart size={20} className="animate-pulse" />
         <span>Pedir Oração</span>
@@ -253,16 +236,16 @@ export default function LinksPage() {
           {/* Logo da Igreja */}
           <div className="flex w-full flex-col items-center">
             <Image
-              height={200}
-              width={300}
-              src="/images/logo_irv_2.png"
+              height={100}
+              width={200}
+              src="/images/logo-irv-bg-white.png"
               alt="logo igreja rio de vida"
             />
           </div>
         </div>
       </div>
       {/* Conteúdo Principal */}
-      <div className="relative z-10 flex w-full max-w-md flex-col items-center px-4 py-10">
+      <div className="relative z-10 flex w-full max-w-md flex-1 flex-col items-center px-4 py-10">
         {/* Renderização Condicional das Vistas */}
         <div className="w-full flex-1">
           {currentView === 'home' && renderHome()}
@@ -272,7 +255,7 @@ export default function LinksPage() {
         </div>
 
         {/* Rodapé Opcional */}
-        <Footer className="mt-16 text-blue-400/50" />
+        <Footer className="mt-16 text-irv-soft" />
       </div>
     </div>
   )
